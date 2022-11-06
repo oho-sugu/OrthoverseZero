@@ -112,6 +112,8 @@ Webページとしての公開は、GitHub Pagesなどが便利です。
 
 Unityフォルダ内のプロジェクトをビルドして、端末にインストールします。
 自分でビルドする際には、Geospatial APIとInfuraのAPIキーを作成して、所定の箇所に設定してください。
+InfuraのAPIキーは、`OrthoverseZero/Unity/Assets/Scripts/PlaceManager.cs`に設定箇所があります。
+Geospatial APIのAPIキーは、Google Cloudのコンソールで作成し、`Project Settings`-`ARCore Extensions`で設定します。
 現時点では、Androidでのビルドと動作確認のみできています。
 
 屋外でアプリを起動して、URIをNFTで紐付けた場所に行くと、2で作成・公開したコンテンツをAR表示できます。
