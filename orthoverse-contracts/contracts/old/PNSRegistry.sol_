@@ -1,0 +1,103 @@
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2022- Suguru Oho <oho.sugu@gmail.com>
+pragma solidity >=0.4.22 <0.9.0;
+
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+
+contract PNSRegistry is Ownable {
+  event NewRecord(
+    address indexed user
+  );
+  event UpdateRecord(
+    address indexed user
+  );
+  event OverwriteRecord(
+    address indexed user
+  );
+
+  using SafeMath for uint256;
+
+  uint256 constant defaultTTL = 120;
+
+  uint initialPrice = 0.01 ether;
+
+  struct Record {
+    address owner;
+    string url;
+    uint price;
+    uint256 ttl;
+  }
+
+  mapping(uint64 => Record) records;
+  mapping(address => uint) ownerRecordCount;
+
+  function setRecord(uint64 _spatialCode, string memory _url) public payable {
+    require(msg.value >= initialPrice);
+
+    Record memory r = records[_spatialCode];
+    // Check value exist
+    if (r.owner != address(0)){
+      // check owner
+      if (r.owner == msg.sender){
+        // TODO ERROR RETURN
+      } else {
+        // check ttl and if time over then overwrite
+        if(r.ttl < block.timestamp){
+          records[_spatialCode] = Record(msg.sender, _url, initialPrice, block.timestamp.add(defaultTTL));
+          ownerRecordCount[r.owner] = ownerRecordCount[r.owner].sub(1);
+          ownerRecordCount[msg.sender] = ownerRecordCount[msg.sender].add(1);
+          emit OverwriteRecord(msg.sender);
+        }
+      }
+    } else {
+      // new record
+      records[_spatialCode] = Record(msg.sender, _url, initialPrice, block.timestamp.add(defaultTTL));
+      ownerRecordCount[msg.sender] = ownerRecordCount[msg.sender].add(1);
+      emit NewRecord(msg.sender);
+    }
+  }
+
+  function  getRecord(uint64 _spatialCode) public view returns(Record memory) {
+    return records[_spatialCode];
+  }
+
+  function setInitialPrice(uint _initialPrice) external onlyOwner {
+    initialPrice = _initialPrice;
+  }
+
+  function getInitialPrice() external view returns(uint){
+    return initialPrice;
+  }
+
+  function changeUrl(uint64 _spatialCode, string memory _url) public {
+    Record memory r = records[_spatialCode];
+    if (r.owner != address(0)){
+      if (r.owner == msg.sender){
+        records[_spatialCode].url = _url;
+        emit UpdateRecord(msg.sender);
+      }
+    }
+  }
+
+  function renewTTL(uint64 _spatialCode) public payable {
+    require(msg.value >= initialPrice);
+    Record memory r = records[_spatialCode];
+    if (r.owner != address(0)){
+      if (r.owner == msg.sender){
+        records[_spatialCode].ttl = records[_spatialCode].ttl.add(defaultTTL);
+        emit UpdateRecord(msg.sender);
+      }
+    }
+  }
+
+  function withdraw() external onlyOwner {
+    address payable _owner = payable(owner());
+    _owner.transfer(address(this).balance);
+  }
+
+  modifier onlyOwnerOf(uint64 _spatialCode){
+    require(msg.sender == records[_spatialCode].owner);
+    _;
+  }
+}

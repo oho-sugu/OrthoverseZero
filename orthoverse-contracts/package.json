@@ -1,0 +1,22 @@
+{
+  "name": "orthoverse-contracts",
+  "version": "0.0.1",
+  "description": "Orthoverse Place to URI binding NFT contract",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Suguru Oho",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^2.1.0",
+    "truffle-plugin-verify": "^0.5.31"
+  }
+}
