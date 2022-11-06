@@ -1,6 +1,6 @@
 # Orthoverse0
 
-本リポジトリは、東京Web3ハッカソン（https://tokyo.akindo.io）の提出物となります。
+本リポジトリは、東京Web3ハッカソン（ https://tokyo.akindo.io ）の提出物となります。
 
 ## プロダクト概要
 
@@ -71,7 +71,7 @@ UniVRM/UniGLTF
 ARFoundation
 ARCore Extention (Google Geospatial API)
 PLATEAU
-Orthoverse HOML Core (https://github.com/oho-sugu/HOMLCore)
+Orthoverse HOML Core ( https://github.com/oho-sugu/HOMLCore )
 
 ## 使用したBlockchain
 
