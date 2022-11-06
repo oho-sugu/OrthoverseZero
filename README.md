@@ -1,5 +1,7 @@
 # Orthoverse0
 
+本リポジトリは、東京Web3ハッカソン（https://tokyo.akindo.io）の提出物となります。
+
 ## プロダクト概要
 
 Orthoverse0は、NFTを用いたリアルメタバースプラットフォームのプロトタイプです。
@@ -11,6 +13,16 @@ Orthoverse0は、NFTを用いたリアルメタバースプラットフォーム
 このURIの示すWebページには、独自のマークアップ言語により動的な3Dコンテンツを置くことができ、これをクライアントアプリは読み込んで現実にAR表示します。
 これにより、現実空間に様々なサービスを展開することができます。
 
+## 資料等について
+
+以下提出資料として作成したスライドと動画へのリンクです。
+https://docs.google.com/presentation/d/e/2PACX-1vRmd-El_hbhpAfPfamzjP4wsG16xjiHUZh04wxq44Q3hjI7jNhpsATvvlldHD6vaEXSAqjMabzI5HRY/pub?start=false&loop=false&delayms=3000
+https://drive.google.com/file/d/1f3_OmrLSKHuyDMxhGu_qFRXwtMzB29bX/view?usp=sharing
+
+テストネットワーク対象のmintサイトが以下です。
+https://ortv.tech/map.html
+
+
 ## 使用したTech Stacks
 
 ### Contract
@@ -19,6 +31,7 @@ Solidity
 Truffle
 Ganache(for local dev)
 openZeppelin(ERC721Enumerable)
+dotenv
 
 ### Server
 
@@ -34,7 +47,6 @@ Infura(as Ethereum network endpoint)
 web3.js
 Vite
 OpenLayers
-dotenv
 
 ### Metadata
 
@@ -57,9 +69,9 @@ Unity 2022.3.9f1
 Nethereum
 UniVRM/UniGLTF
 ARFoundation
-ARCore Extention(Google Geospatial API)
+ARCore Extention (Google Geospatial API)
 PLATEAU
-Orthoverse HOML Core
+Orthoverse HOML Core (https://github.com/oho-sugu/HOMLCore)
 
 ## 使用したBlockchain
 
@@ -92,7 +104,7 @@ https://ortv.tech/map.html
 （拡大率によっては、右側に「More Zoom」というメッセージが表示されます。その場合はより拡大してください。）
 すでに誰かによって確保されている領域の場合は、右側にURIが表示されます。
 表示されていなければ、所有者のいない領域なので、テキストフィールドにURIを入力して[Mint]ボタンを押し、
-ウォレットの指示に従ってトランザクションを実行することで、mintできます。
+ウォレットの指示にしたがってトランザクションを実行することでmintできます。
 
 ここまでで、矩形領域に対して、自分のURIを設定することができました。
 
@@ -138,4 +150,6 @@ Geospatial APIのAPIキーは、Google Cloudのコンソールで作成し、`Pr
 Webサーバーとの組み合わせにより、現在のWebでできていることを空間アプリとして現実世界で実現できます。
 
 ・・・
+
+TBD
 
