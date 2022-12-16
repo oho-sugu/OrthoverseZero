@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.atteneder.draco": "https://github.com/atteneder/DracoUnity.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.google.ar.core.arfoundation.extensions": "https://github.com/google-ar/arcore-unity-extensions.git",
     "com.ohoooo.homlcore": "https://github.com/oho-sugu/HOMLCore.git#URPandNewVRM",
