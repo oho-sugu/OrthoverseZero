@@ -1,6 +1,6 @@
 # Orthoverse0
 
-本リポジトリは、東京Web3ハッカソン（https://tokyo.akindo.io）の提出物となります。
+本リポジトリは、東京Web3ハッカソン（ https://tokyo.akindo.io ）の提出物となります。
 
 ## プロダクト概要
 
@@ -16,62 +16,63 @@ Orthoverse0は、NFTを用いたリアルメタバースプラットフォーム
 ## 資料等について
 
 以下提出資料として作成したスライドと動画へのリンクです。
-https://docs.google.com/presentation/d/e/2PACX-1vRmd-El_hbhpAfPfamzjP4wsG16xjiHUZh04wxq44Q3hjI7jNhpsATvvlldHD6vaEXSAqjMabzI5HRY/pub?start=false&loop=false&delayms=3000
-https://drive.google.com/file/d/1f3_OmrLSKHuyDMxhGu_qFRXwtMzB29bX/view?usp=sharing
+
+ - https://docs.google.com/presentation/d/e/2PACX-1vRmd-El_hbhpAfPfamzjP4wsG16xjiHUZh04wxq44Q3hjI7jNhpsATvvlldHD6vaEXSAqjMabzI5HRY/pub?start=false&loop=false&delayms=3000
+ - https://drive.google.com/file/d/1f3_OmrLSKHuyDMxhGu_qFRXwtMzB29bX/view?usp=sharing
 
 テストネットワーク対象のmintサイトが以下です。
-https://ortv.tech/map.html
 
+- https://ortv.tech/map.html
 
 ## 使用したTech Stacks
 
 ### Contract
 
-Solidity
-Truffle
-Ganache(for local dev)
-openZeppelin(ERC721Enumerable)
-dotenv
+ - Solidity
+ - Truffle
+ - Ganache(for local dev)
+ - openZeppelin(ERC721Enumerable)
+ - dotenv
 
 ### Server
 
-AWS
-Let's Encrypt(For SSL Certs)
+ - AWS
+ - Let's Encrypt(For SSL Certs)
 
 ### External APIs
 
-Infura(as Ethereum network endpoint)
+ - Infura(as Ethereum network endpoint)
 
 ### Web Interface
 
-web3.js
-Vite
-OpenLayers
+ - web3.js
+ - Vite
+ - OpenLayers
 
 ### Metadata
 
-Python
-Flask
-mod_wsgi
+ - Python
+ - Flask
+ - mod_wsgi
 
 ### Map Image Server
 
-OpenStreetMap(mapdata)
-PostgreSQL with PostGIS
-renderd & mapnik
-Ubuntu 22.04
-Apache2
-mod_tile
+ - OpenStreetMap(mapdata)
+ - PostgreSQL with PostGIS
+ - renderd & mapnik
+ - Ubuntu 22.04
+ - Apache2
+ - mod_tile
 
 ### Client
 
-Unity 2022.3.9f1
-Nethereum
-UniVRM/UniGLTF
-ARFoundation
-ARCore Extention (Google Geospatial API)
-PLATEAU
-Orthoverse HOML Core (https://github.com/oho-sugu/HOMLCore)
+ - Unity 2022.3.9f1
+ - Nethereum
+ - UniVRM/UniGLTF
+ - ARFoundation
+ - ARCore Extention (Google Geospatial API)
+ - PLATEAU
+ - Orthoverse HOML Core ( https://github.com/oho-sugu/HOMLCore )
 
 ## 使用したBlockchain
 
@@ -115,9 +116,9 @@ https://ortv.tech/map.html
 ### 2. コンテンツ作成
 
 マークアップで記述したテキストを任意の外部からアクセスできるWebサーバーにデプロイします。
-マークアップの仕様は、Mozillaが開発したA-Frame(https://aframe.io)をベースにしています。
+マークアップの仕様は、Mozillaが開発したA-Frame( https://aframe.io )をベースにしています。
 （Unity上でパーサーから作っているので、厳密には互換性はない、また、Lua言語を使ったスクリプティングなど独自拡張もしている。）
-サンプルは次のURLにいくつか作成しています。https://github.com/oho-sugu/ovtestpages
+サンプルは次のURLにいくつか作成しています。 https://github.com/oho-sugu/ovtestpages 
 Webページとしての公開は、GitHub Pagesなどが便利です。
 
 ### 3. クライアントアプリ
