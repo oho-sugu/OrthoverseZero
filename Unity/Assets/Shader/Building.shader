@@ -8,6 +8,7 @@ Shader "Custom/Building"
     {
         Tags {"Queue" = "Transparent" "IgnoreProjector" = "True" "RenderType" = "Transparent"}
         LOD 200
+        Cull Off
 
         Pass {
             ZWrite On

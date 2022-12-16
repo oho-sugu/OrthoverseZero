@@ -68,6 +68,7 @@ namespace Google.XR.ARCoreExtensions.Samples.Geospatial
         public ARCoreExtensions ARCoreExtensions;
 
         public PlaceManager PlaceManager;
+        public PLATEAUManager PLATEAUManager;
 
         [Header("UI Elements")]
 
@@ -447,6 +448,7 @@ namespace Google.XR.ARCoreExtensions.Samples.Geospatial
                 pose.HeadingAccuracy.ToString("F1"));
 
                 PlaceManager.SetCurrentPosition(pose.Longitude, pose.Latitude);
+                PLATEAUManager.SetCurrentPosition(pose.Longitude, pose.Latitude);
             }
             else
             {
