@@ -16,7 +16,8 @@ public class PLATEAUManager : MonoBehaviour
     public AREarthManager EarthManager;
     public ARAnchorManager am;
 
-    private string baseURL = "https://oho-sugu.github.io/plateaudrcdata/";
+//    private string baseURL = "https://oho-sugu.github.io/plateaudrcdata/";
+    private string baseURL = "https://ortv.tech/plateau";
 
     public Text InfoText;
 
@@ -64,7 +65,13 @@ public class PLATEAUManager : MonoBehaviour
             spatialGrids.Add(code, true);
 
             (int x, int y) = SpatialCode.fromSpatialCode(code);
-            string dracoDLURL = $"{baseURL}{x}_{y}.draco";
+
+            int x0 = x / 1000;
+            int x1 = (x / 10) % 100;
+            int y0 = y / 1000;
+            int y1 = (y / 10) % 100;
+
+            string dracoDLURL = $"{baseURL}/{x0}/{y0}/{x1}/{y1}/{x}_{y}.draco";
 
             Debug.Log("DracoDL:" + dracoDLURL);
 
